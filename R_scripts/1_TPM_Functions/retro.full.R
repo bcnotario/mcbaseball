@@ -12,9 +12,9 @@ retro.full <- function(yyyy){
   names(event) <- fields[,"Header"]
   event$SCORE_DIF <- (event$HOME_SCORE_CT-event$AWAY_SCORE_CT)*sign(event$BAT_HOME_ID-.5)
   event$BASE_STATE <- as.factor(paste(as.numeric(event$BASE1_RUN_ID!=""),as.numeric(event$BASE2_RUN_ID!=""),
-                            as.numeric(event$BASE3_RUN_ID!=""),sep=""))
+                                      as.numeric(event$BASE3_RUN_ID!=""),sep=""))
   event$BASE_ADV <- as.numeric(event$EVENT_CD==14|event$EVENT_CD==15|event$EVENT_CD==16|event$EVENT_CD==20|
-                                 event$EVENT_CD==21|event$EVENT_CD==22|event$EVENT_CD==23)
+                               event$EVENT_CD==21|event$EVENT_CD==22|event$EVENT_CD==23)
   event$OUTS_CT <- as.factor(event$OUTS_CT)
   
   #Game Log File
@@ -70,26 +70,27 @@ retro.full <- function(yyyy){
     q <- nrow(evt[evt$DP_FL==T&evt$BAT_DEST_ID==0&evt$RUN2_DEST_ID==0&(evt$BASE_STATE=="110"|evt$BASE_STATE=="111"),])
     p5 <- p/(p+q)
     #Triple Play
-    TP <- nrow(event[event$TP_FL==T,])/nrow(event[event$OUTS_CT==0&event$BAT_EVENT_FL==T&
-                                                    (event$BASE_STATE=="110"|event$BASE_STATE=="111"),])
+    TP <- nrow(event[event$TP_FL==T,])/
+          nrow(event[event$OUTS_CT==0&event$BAT_EVENT_FL==T&(event$BASE_STATE=="110"|event$BASE_STATE=="111"),])
     #Fielders Choice
     FC1 <- nrow(evt[evt$BAT_DEST_ID==0&evt$RUN1_DEST_ID==2&evt$H_FL==0&evt$ERR_CT==0&evt$EVENT_OUTS_CT==1&
-                      evt$OUTS_CT!=2&(evt$BASE_STATE=="100"|evt$BASE_STATE=="101"),])/
-      nrow(evt[evt$OUTS_CT!=2&(evt$BASE_STATE=="100"|evt$BASE_STATE=="101"),])
+                    evt$OUTS_CT!=2&(evt$BASE_STATE=="100"|evt$BASE_STATE=="101"),])/
+           nrow(evt[evt$OUTS_CT!=2&(evt$BASE_STATE=="100"|evt$BASE_STATE=="101"),])
     FC2 <- nrow(evt[evt$RUN2_DEST_ID==3&evt$H_FL==0&evt$ERR_CT==0&evt$EVENT_OUTS_CT==1&
-                      evt$OUTS_CT!=2&(evt$BASE_STATE=="010"|evt$BASE_STATE=="110"),])/
-      nrow(evt[evt$OUTS_CT!=2&(evt$BASE_STATE=="010"|evt$BASE_STATE=="110"),])
-    FC3 <- nrow(evt[evt$SF_FL==F&evt$BASE3_RUN_ID!=""&evt$RUN3_DEST_ID==4&evt$OUTS_CT!=2&evt$ERR_CT==0
-                    &evt$EVENT_OUTS_CT==1,])/nrow(evt[evt$OUTS_CT!=2&evt$BASE3_RUN_ID!="",])
+                    evt$OUTS_CT!=2&(evt$BASE_STATE=="010"|evt$BASE_STATE=="110"),])/
+           nrow(evt[evt$OUTS_CT!=2&(evt$BASE_STATE=="010"|evt$BASE_STATE=="110"),])
+    FC3 <- nrow(evt[evt$SF_FL==F&evt$BASE3_RUN_ID!=""&evt$RUN3_DEST_ID==4&evt$OUTS_CT!=2&evt$ERR_CT==0&
+                    evt$EVENT_OUTS_CT==1,])/nrow(evt[evt$OUTS_CT!=2&evt$BASE3_RUN_ID!="",])
     #Line Drive Double Play
     LDDP <- (nrow(evt[evt$DP_FL==T,])-nrow(evt[grepl("GDP",evt$EVENT_TX),]))/
-      nrow(evt[(evt$OUTS_CT==0|evt$OUTS_CT==1)&
+             nrow(evt[(evt$OUTS_CT==0|evt$OUTS_CT==1)&
                  (evt$BASE_STATE=="100"|evt$BASE_STATE=="110"|evt$BASE_STATE=="101"|evt$BASE_STATE=="111"),])
     #Sacrifice Fly & Ground Double Play
-    SF <- nrow(evt[evt$SF_FL==T&evt$BASE3_RUN_ID!=""&evt$RUN3_DEST_ID==4&evt$OUTS_CT!=2&evt$DP_FL==F&
-                     evt$ERR_CT==0,])/nrow(evt[evt$OUTS_CT!=2&evt$BASE3_RUN_ID!="",])
-    GDP <- nrow(evt[grepl("GDP",evt$EVENT_TX),])/nrow(evt[(evt$OUTS_CT==0|evt$OUTS_CT==1)&
-                                                            (evt$BASE_STATE=="100"|evt$BASE_STATE=="110"|evt$BASE_STATE=="101"|evt$BASE_STATE=="111"),])
+    SF <- nrow(evt[evt$SF_FL==T&evt$BASE3_RUN_ID!=""&evt$RUN3_DEST_ID==4&evt$OUTS_CT!=2&evt$DP_FL==F&evt$ERR_CT==0,])/
+          nrow(evt[evt$OUTS_CT!=2&evt$BASE3_RUN_ID!="",])
+    GDP <- nrow(evt[grepl("GDP",evt$EVENT_TX),])/
+           nrow(evt[(evt$OUTS_CT==0|evt$OUTS_CT==1)&
+                    (evt$BASE_STATE=="100"|evt$BASE_STATE=="110"|evt$BASE_STATE=="101"|evt$BASE_STATE=="111"),])
     #Stolen Base Attempt Complement & Stolen Bases
     SBC <- 1 - nrow(spl)/nrow(evt[evt$EVENT_CD==14|evt$EVENT_CD==15|evt$EVENT_CD==16|evt$H_FL==1,])
     SB <- nrow(spl[spl$SB==T,])/nrow(evt[evt$BAT_EVENT_FL==T,])
