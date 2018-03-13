@@ -1,4 +1,4 @@
-#Expected Runners for all Lineup Permutations (9x input 25x25)
+#Expected Runners for all Lineup Permutations
 #Inputs: tpm.list (List of 25x25 TPMs of Starting Lineup)
 #Packages: e1071
 #Functions: tpm.lineup.lead, tpm.lineup.runs
