@@ -1,6 +1,5 @@
 #Season NL/AL Lineup Statistics TPM (pre-conversion)
 #Inputs: yyyy (Year), ALNL ("AL" American League or "NL" National League)
-#Packages: 
 
 tpm.mlb <- function(yyyy,ALNL){
   
