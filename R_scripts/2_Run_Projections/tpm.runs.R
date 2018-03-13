@@ -1,5 +1,6 @@
 #Expected TPM Runs for LIST of Lineup Matrices
 #Inputs: tpm.list (List of 25x25 TPMs of Starting Lineup)
+#Functions: tpm.convert
 
 tpm.lineup.runs <- function(tpm.list){
 
