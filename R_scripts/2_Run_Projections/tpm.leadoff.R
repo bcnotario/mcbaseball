@@ -1,5 +1,5 @@
-#Expected TPM Leadoff for LIST of Lineup Matrices (9x input 25x25)
-#Inputs: tpm.list (TPMs of Starting Lineup)
+#Expected TPM Leadoff for LIST of Lineup Matrices
+#Inputs: tpm.list (25x25 TPMs of Starting Lineup)
 #Packages: expm
 
 tpm.lineup.lead <- function(tpm.list){
