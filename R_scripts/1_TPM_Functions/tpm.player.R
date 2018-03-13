@@ -1,7 +1,7 @@
 #Season Player Statistics TPM (pre-conversion)
 #Inputs: batter (Batter ID), pitcher (Pitcher ID), line (Lineup Position), event (Event File), glmm (GLMM)
 #Packages:
-#Functions Referenced: OBP.glmm.R
+#Functions: OBP.glmm.R
 
 tpm.player <- function(batter,pitcher,line,event,glmm){
   
