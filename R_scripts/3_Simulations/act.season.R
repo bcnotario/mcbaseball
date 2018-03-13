@@ -1,5 +1,6 @@
 #Full Season Box Scores (w/in 9 Innings)
 #Inputs: yyyy (Year)
+#Data Files:  all"yyyy".csv, fields.csv, GL"yyyy".txt, game_log_header.csv
 
 act.season <- function(yyyy){
   
@@ -52,6 +53,6 @@ act.season <- function(yyyy){
   colnames(season.mat) <- c("GameID","Pitcher.v","H.v","BB.v","RBI.v","ER.v","IP.v",
                             "Pitcher.h","H.h","BB.h","RBI.h","ER.h","IP.h","Team.v","Team.h")
   
-  #Output - Season Actual Results by Game
+  #Output - Season Actual Box Score by Game
   return(season.mat)
 }
