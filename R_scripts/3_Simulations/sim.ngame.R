@@ -1,5 +1,6 @@
 #Fixed Lineup Run Simulation
 #Inputs: n (n Game Simulations), tpm.list (List of 25x25 TPMs of Starting Lineup)
+#Functions: tpm.convert
 
 sim.ngame <- function(n,tpm.list){
   
