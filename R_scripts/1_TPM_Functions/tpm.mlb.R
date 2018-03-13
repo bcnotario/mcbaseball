@@ -1,4 +1,4 @@
-#Season NL/AL Average & NL/AL Lineup STATISTICS TPM (pre-conversion)
+#Season NL/AL Lineup STATISTICS TPM (pre-conversion)
 #Inputs: yyyy (Year), ALNL ("AL" American League or "NL" National League)
 #Packages: 
 
