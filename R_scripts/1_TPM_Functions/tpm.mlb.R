@@ -84,7 +84,7 @@ tpm.mlb <- function(yyyy,ALNL){
     FC3 <- nrow(rplay[rplay$SF_FL==F&rplay$BASE3_RUN_ID!=""&rplay$RUN3_DEST_ID==4&rplay$OUTS_CT!=2&rplay$ERR_CT==0&
 					  rplay$EVENT_OUTS_CT==1,])/nrow(rplay[rplay$OUTS_CT!=2&rplay$BASE3_RUN_ID!="",])
     
-	#Season MLB Base Running Splits
+    #Season MLB Base Running Splits
     #Single - Runner on 1st Advances to 2nd or 3rd
     p <- nrow(rplay[rplay$H_FL==1&rplay$EVENT_OUTS_CT==0&rplay$ERR_CT==0&rplay$BAT_DEST_ID==1&rplay$RUN1_DEST_ID==2,])
     q <- nrow(rplay[rplay$H_FL==1&rplay$EVENT_OUTS_CT==0&rplay$ERR_CT==0&rplay$BAT_DEST_ID==1&rplay$RUN1_DEST_ID==3,])
@@ -106,7 +106,7 @@ tpm.mlb <- function(yyyy,ALNL){
     q <- nrow(rplay[rplay$DP_FL==T&rplay$BAT_DEST_ID==0&rplay$RUN2_DEST_ID==0&(rplay$BASE_STATE=="110"|rplay$BASE_STATE=="111"),])
     p5 <- p/(p+q)
     
-	#TPM A, B, C
+    #TPM A, B, C
     tpm.A <- matrix(c(rep(HR,8),(BB+X1B)*SBC,0,X1B*(1-p1)*SBC,X1B*SBC,0,0,X1B*(1-p1)*SBC,0,
                       X2B+SB,X2B*(1-p3),X2B+SB,X2B+SB,X2B*(1-p3),X2B*(1-p3),X2B+SB,X2B*(1-p3),rep(X3B,8),
                       0,BB+X1B*p1,BB,0,X1B*p1*(1-p2),X1B*p1,0,X1B*p1*(1-p2),
@@ -119,7 +119,7 @@ tpm.mlb <- function(yyyy,ALNL){
                       LDDP/3,rep(0,8)),8,8)
     tpm.A[is.nan(tpm.A)] = 0; tpm.B[is.nan(tpm.B)] = 0; tpm.C[is.nan(tpm.C)] = 0 
     
-	#TPM ABC
+    #TPM ABC
     tpm.ABC <- matrix(0,25,25)
     tpm.ABC[1:8,1:8] <- tpm.A; tpm.ABC[9:16,9:16] <- tpm.A; tpm.ABC[17:24,17:24] <- tpm.A
     tpm.ABC[1:8,9:16] <- tpm.B; tpm.ABC[9:16,17:24] <- tpm.B; tpm.ABC[1:8,17:24] <- tpm.C
