@@ -1,5 +1,6 @@
 #Season NL/AL Lineup Statistics TPM (pre-conversion)
 #Inputs: yyyy (Year), ALNL ("AL" American League or "NL" National League)
+#Data Files:  all"yyyy".csv, fields.csv
 
 tpm.mlb <- function(yyyy,ALNL){
   
