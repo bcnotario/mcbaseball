@@ -1,6 +1,5 @@
 #Convert 25x25 TPM to 85x85 Run Tracking TPM
 #Inputs: tpm.mat (25x25 TPM matrix)
-#Packages: 
 
 tpm.convert <- function(tpm.mat){
   
