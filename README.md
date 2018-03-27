@@ -50,25 +50,25 @@ These functions simulate games and return a season's box scores and simulations
 ### act.season
 Returns the box score statistics of both starting pitchers for all games in a given season
 ```
-#2017 MLB Season
+#Ex: 2017 MLB Season
 act.season(2017)
 ```
 ### sim.ngame
 Simulates the earned runs in 9 innings for *n* games for a given lineup
 ```
-Ex: 100 games, 2017 American League average lineup
+#Ex: 100 games, 2017 American League average lineup
 sim.ngame(100,tpm.2017AL.list)
 ```
 
 ### sim.runopt
 Returns the optimal batting order that would score the most earned runs for a given lineup
 ```
-Ex: 2017 American League average lineup
+#Ex: 2017 American League average lineup
 sim.runopt(tpm.2017AL.list)
 ```
 ### sim.season
 Returns the simulated earned runs, simulated earned runs from an optimal lineup, expected earned runs, and expected earned earned runs from an optimal lineup in 9 innings from the home and visiting starting lineups of each game in a given season
 ```
-#2017 MLB Season
+#Ex: 2017 MLB Season
 sim.season(2017)
 ```
