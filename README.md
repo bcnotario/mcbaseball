@@ -11,7 +11,8 @@ retro2017 <- retro.full(2017)
 Returns the TPMs by average lineup position for a given season and league
 ```
 #Ex: 2017 American League, 2017 National League
-tpm.2017AL.list <- tpm.mlb(2017,"AL"); tpm.2017NL.list <- tpm.mlb(2017,"NL")
+tpm.2017AL.list <- tpm.mlb(2017,"AL")
+tpm.2017NL.list <- tpm.mlb(2017,"NL")
 ```
 ### tpm.player
 Returns the TPM by batter against a specific pitcher, in a specific lineup position for a given season 
