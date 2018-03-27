@@ -10,8 +10,7 @@ sim.season <- function(yyyy){
   eventYY <- retro.full(yyyy)
   
   #GLMM
-  glmm.temp <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,
-                     data=eventYY$event[eventYY$event$BAT_EVENT_FL==TRUE,])
+  glmm.temp <- eventYY$glmm
   
   #Game Log Information & Actual Results
   gamestat.temp <- eventYY$gamelog
