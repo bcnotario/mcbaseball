@@ -1,4 +1,4 @@
-#Retrosheet Full Event Detail, Season Gamelog Detail, & Base Running Splits
+#Retrosheet Full Event Detail, Season Gamelog Detail, Base Running Splits, & GLMM
 #Inputs:  yyyy (Year)
 #Data Files:  all"yyyy".csv, fields.csv, GL"yyyy".txt, game_log_header.csv
 
@@ -101,6 +101,6 @@ retro.full <- function(yyyy){
   glmm.temp <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,
                      data=eventYY$event[eventYY$event$BAT_EVENT_FL==TRUE,])
   
-  #OUTPUT
+  #OUTPUT - Event file, Gamelog file, Splits, GLMM
   return(list(event=event,gamelog=gamelog,splits=event.mat,glmm=glmm.temp))
 }
