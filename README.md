@@ -47,7 +47,7 @@ Returns the expected earned runs in an inning given a specific leadoff hitter fo
 tpm.lineup.runs(tpm.2017NL.list)
 ```
 ## Simulation Functions
-These functions simulate games and return a season's box scores and simulations
+These functions simulate games and return a season's box scores and simulationed games
 ### act.season
 Returns the box score statistics of both starting pitchers for all games in a given season
 ```
@@ -68,7 +68,7 @@ Returns the optimal batting order that would score the most earned runs for a gi
 sim.runopt(tpm.2017AL.list)
 ```
 ### sim.season
-Returns the simulated earned runs, simulated earned runs from an optimal lineup, expected earned runs, and expected earned earned runs from an optimal lineup in 9 innings from the home and visiting starting lineups of each game in a given season
+Returns the simulated earned runs, simulated earned runs from an optimal lineup, expected earned runs, and expected earned earned runs from an optimal lineup in 9 innings from the home and visiting starting lineups for all games in a given season
 ```
 #Ex: 2017 MLB Season
 sim.season(2017)
