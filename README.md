@@ -27,7 +27,7 @@ Converts the original 25x25 TPM to a 85x85 TPM used for run tracking
 tpm.convert(tpm.2017AL.list[[1]])
 ```
 ### OBP.glmm
-Returns the OBP rescale factor for a player's generalized batting statistics with respect to the pitcher faced, total inning outs, and base runner situation 
+Returns the On-Base Percentage rescale factor for a player's generalized batting statistics with respect to the pitcher faced, total inning outs, and base runner situation 
 ```
 #Ex: C. Kershaw, 2 Outs, Runners on 1st/3rd, 2017 MLB Season
 OBP.glmm("kersc001","2","101",retro2017$glmm)
@@ -49,7 +49,7 @@ tpm.lineup.runs(tpm.2017NL.list)
 ## Simulation Functions
 These functions simulate games and return a season's box scores and simulationed games
 ### act.season
-Returns the box score statistics of both starting pitchers for all games in a given season
+Returns the actual box score statistics of both starting pitchers for all games in a given season
 ```
 #Ex: 2017 MLB Season
 act.season(2017)
