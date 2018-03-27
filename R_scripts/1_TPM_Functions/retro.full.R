@@ -97,6 +97,10 @@ retro.full <- function(yyyy){
     event.mat[,i] <- c(p1,p2,p3,p4,p5,TP,FC1,FC2,FC3,LDDP,SF,GDP,SBC,SB)
   }
   
+  #GLMM
+  glmm.temp <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,
+                     data=eventYY$event[eventYY$event$BAT_EVENT_FL==TRUE,])
+  
   #OUTPUT
-  return(list(event=event,gamelog=gamelog,splits=event.mat))
+  return(list(event=event,gamelog=gamelog,splits=event.mat,glmm=glmm.temp))
 }
