@@ -1,13 +1,13 @@
 # Baseball Simulation Model
 ## Transition Probability Matrix Functions
-These functions prepare the transition probability matrices (TPMs) by season and player or season league average lineup position to be used to track leadoffs and runs
+These functions prepare the transition probability matrices (TPMs) by player or league average lineup position
 ### retro.full
 Prepares the event and gamelog details, the generalized linear mixed model, and the base running, outs, and stolen base splits by lineup position for a given season (ex: 2017)
 ```
 retro2017 <- retro.full(2017)
 ```
 ### tpm.mlb
-Returns the TPMs by lineup position for a given season and league (ex: 2017 American & National Leagues)
+Returns the TPMs by average lineup position for a given season and league (ex: 2017 American & National Leagues)
 ```
 tpm.2017AL.list <- tpm.mlb(2017,"AL"); tpm.2017NL.list <- tpm.mlb(2017,"NL")
 ```
@@ -22,23 +22,24 @@ Converts the original 25x25 TPM to a 85x85 TPM used for run tracking (ex: 2017 A
 tpm.convert(tpm.2017AL.list[[1]])
 ```
 ### OBP.glmm
-Rescale factor for a player's generalized batting statistics according to the pitcher faced, total inning outs, and base runner situation (ex: C. Kershaw, 2 Outs, Runners on 1st/3rd, 2017)
+Returns the OBP rescale factor for a player's generalized batting statistics with respect to the pitcher faced, total inning outs, and base runner situation (ex: C. Kershaw, 2 Outs, Runners on 1st/3rd, 2017)
 ```
 OBP.glmm("kersc001","2","101",retro2017$glmm)
 ```
 ## Run Projection Functions
+These functions are combined to project the earned runs in a 9-inning game
 ### tpm.lineup.lead
-Probability of leading off an inning by lineup position for given lineup (ex: 2017 NL average lineup)
+Returns the probability of leading off an inning for each hitter in a lineup for a given lineup(ex: 2017 NL average lineup)
 ```
 tpm.lineup.lead(tpm.2017NL.list)
 ```
-Expected runs in an inning by lineup position for a given lineup (ex: 2017 NL average lineup)
+Returns the expected earned runs in an inning given a specific leadoff hitter for each potential leadoff hitter of a given lineup (ex: 2017 NL average lineup)
 ### tpm.lineup.runs
-
 ```
 tpm.lineup.runs(tpm.2017NL.list)
 ```
 ## Simulation Functions
+These functions simulate games and return a season's box scores and simulations
 ### act.season
 Returns the box score statistics of both starting pitchers for all games in a given season (ex: 2017)
 ```
@@ -51,13 +52,12 @@ sim.ngame(100,tpm.2017AL.list)
 ```
 
 ### sim.runopt
-Returns the optimal batting order that would score the most runs for a given lineup (ex: 2017 AL average lineup)
+Returns the optimal batting order that would score the most earned runs for a given lineup (ex: 2017 AL average lineup)
 ```
 sim.runopt(tpm.2017AL.list)
 ```
-
 ### sim.season
-Returns the simulated runs, simulated runs from an optimal lineup, expected runs, and expected runs from an optimal lineup in 9 innings from each starting lineup for a given season (ex: 2017)
+Returns the simulated earned runs, simulated earned runs from an optimal lineup, expected earned runs, and expected earned earned runs from an optimal lineup in 9 innings from the home and visiting starting lineups of each game in a given season (ex: 2017)
 ```
 sim.season(2017)
 ```
