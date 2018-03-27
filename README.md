@@ -22,38 +22,42 @@ Converts the original 25x25 TPM to a 85x85 TPM used for run tracking (ex: 2017 A
 tpm.convert(tpm.2017AL.list[[1]])
 ```
 ### OBP.glmm
-Used in the tpm.player() function to rescale a player's generalized batting statistics according to the pitcher faced, total inning outs, and base runner situation (ex: C. Kershaw, 2 Outs, Runners on 1st/3rd, 2017)
+Rescale factor for a player's generalized batting statistics according to the pitcher faced, total inning outs, and base runner situation (ex: C. Kershaw, 2 Outs, Runners on 1st/3rd, 2017)
 ```
 OBP.glmm("kersc001","2","101",retro2017$glmm)
 ```
 ## Run Projection Functions
 ### tpm.lineup.lead
-
+Probability of leading off an inning by lineup position for given lineup (ex: 2017 NL average lineup)
 ```
-tpm.lineup.lead()
+tpm.lineup.lead(tpm.2017NL.list)
 ```
+Expected runs in an inning by lineup position for a given lineup (ex: 2017 NL average lineup)
 ### tpm.lineup.runs
 
 ```
-tpm.lineup.runs()
+tpm.lineup.runs(tpm.2017NL.list)
 ```
 ## Simulation Functions
 ### act.season
+Returns the box score statistics of both starting pitchers for all games in a given season (ex: 2017)
 ```
-act.season(yyyy)
+act.season(2017)
 ```
-
 ### sim.ngame
+Simulates the earned runs in 9 innings for *n* games for a given lineup (ex: 2017 AL average lineup)
 ```
-sim.ngame(n,tpm.list)
+sim.ngame(100,tpm.2017AL.list)
 ```
 
 ### sim.runopt
+Returns the optimal batting order that would score the most runs for a given lineup (ex: 2017 AL average lineup)
 ```
-sim.runopt(tpm.list)
+sim.runopt(tpm.2017AL.list)
 ```
 
 ### sim.season
+Returns the simulated runs, simulated runs from an optimal lineup, expected runs, and expected runs from an optimal lineup in 9 innings from each starting lineup for a given season (ex: 2017)
 ```
-sim.season(yyyy)
+sim.season(2017)
 ```
