@@ -15,7 +15,7 @@ tpm.2017AL.list <- tpm.mlb(2017,"AL")
 tpm.2017NL.list <- tpm.mlb(2017,"NL")
 ```
 ### tpm.player
-Returns the TPM by batter against a specific pitcher, in a specific lineup position for a given season 
+Returns the TPM by batter against a specific pitcher, in a specific lineup position, for a given season 
 ```
 #Ex: B. Posey, C. Kershaw, Cleanup, 2017 MLB Season
 tpm.player("poseb001","kersc001",4,retro2017$event,retro2017$glmm)
