@@ -68,7 +68,7 @@ Returns the optimal batting order that would score the most earned runs for a gi
 sim.runopt(tpm.2017AL.list)
 ```
 ### sim.season
-Returns the simulated earned runs, simulated earned runs from an optimal lineup, expected earned runs, and expected earned earned runs from an optimal lineup in 9 innings from the home and visiting starting lineups for all games in a given season
+Returns the simulated and expected earned runs in 9 innings from the given and optimal starting lineups, for both teams, for all games in a given season
 ```
 #Ex: 2017 MLB Season
 sim.season(2017)
