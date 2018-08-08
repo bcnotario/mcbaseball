@@ -1,4 +1,4 @@
-# Baseball Simulation Model
+# Markov Chain Baseball Simulation Model
 ## Transition Probability Matrix Functions
 These functions prepare the transition probability matrices (TPMs) by player or league average lineup position
 ### retro.full
