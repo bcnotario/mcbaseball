@@ -1,6 +1,6 @@
 #Remaining Innning Runs & Game Probability per Batter per Game (5 min per game)
 
-rem.pred <- function(yyyy,team.h,game.n,glmm){
+rem.pred <- function(yyyy,team.h,game.n){
   
   path <- "~/Documents/Retrosheets/download.folder/unzipped/"
   
