@@ -73,3 +73,18 @@ Returns the simulated and expected earned runs in 9 innings from the given and o
 #Ex: 2017 MLB Season
 sim.season(2017)
 ```
+## Game Summary Using Remaining Inning Simulations
+### tpm.label
+Labels for TPM entries
+### rem.9inn 
+Simulation of the game remainder (up to 9 innings) using the fixed starting lineup
+### rem.xinn
+Simulation of the game in extra innings using the fixed starting lineup
+### rem.ngame
+Game simulation (n-times) using the starting lineups, starting pitchers, and functions (rem.9inn, rem.xinn)
+### rem.pred
+Game summary plot (using rem.ngame) that tracks game events, the home team's probability of winning the game, each team's expected remaining innings runs per at-bat
+Situation Predictor per Batter per Game (5 min per game)
+```
+rem.pred(2019,'SDN',5)
+```
