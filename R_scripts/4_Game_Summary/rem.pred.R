@@ -17,7 +17,7 @@ rem.pred <- function(yyyy,team.h,game.n,glmm){
   
   #GLMM
   library(lme4)
-  glmm <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,data=eventYY[eventYY$BAT_EVENT_FL==TRUE,])
+  glmm <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,data=retroYY$event[retroYY$event$BAT_EVENT_FL==TRUE,])
   
   #Visiting Starting Lineup & Pitcher
   line.1v <- c(as.character(gameYY[[1]]),paste0("1. ",toupper(substring(gameYY[[1]],5,5)),' ',master[master$retroID==gameYY[[1]],'nameLast']))
