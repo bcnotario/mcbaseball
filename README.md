@@ -75,6 +75,9 @@ sim.season(2017)
 ```
 ### lineup.today
 Returns the starting lineups and starting pitchers by team from BBRef for a given date
+```
+lineup.today(20180704)
+```
 ## Game Summary Using Remaining Inning Simulations
 ### tpm.label
 Labels for TPM entries
