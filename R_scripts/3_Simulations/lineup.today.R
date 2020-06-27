@@ -1,4 +1,4 @@
-lineup.today <- function(today){
+retro.lineup <- function(today){
   
   #INPUT - today (format 'yyyymmdd')
   #Remove bbrefID==NA from Lahman Master
