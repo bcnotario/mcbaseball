@@ -73,10 +73,10 @@ Returns the simulated and expected earned runs in 9 innings from the given and o
 #Ex: 2017 MLB Season
 sim.season(2017)
 ```
-### lineup.today
-Returns the starting lineups and starting pitchers by team from BBRef for a given date
+### retro.lineup
+Returns the starting lineups and starting pitchers by team (in terms of Retrosheet IDs) from BBRef for a given date
 ```
-lineup.today(20180704)
+retro.lineup(20180704)
 ```
 ## Game Summary Using Remaining Inning Simulations
 ### tpm.label
