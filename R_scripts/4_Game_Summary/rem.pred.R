@@ -16,7 +16,7 @@ rem.pred <- function(yyyy,team.h,game.n){
   master <- Master[!is.na(Master$retroID),]
   
   #GLMM
-  library(lme4)
+  library(faraway)
   glmm <- glmer(BASE_ADV ~ OUTS_CT + BASE_STATE + (1|PIT_ID),family=binomial,data=retroYY$event[retroYY$event$BAT_EVENT_FL==TRUE,])
   
   #Visiting Starting Lineup & Pitcher
